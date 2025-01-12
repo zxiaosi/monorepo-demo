@@ -1,8 +1,21 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "declaration": true,
-    "skipLibCheck": true,
-    "baseUrl": "./"
+    "resolveJsonModule": true, // 允许 import 命令导入 JSON 文件
+    "esModuleInterop": true, // 修复了一些 CommonJS 和 ES6 模块之间的兼容性问题
+    "moduleResolution": "node", // 确定模块路径的算法，即如何查找模块。采用 Node.js 的 CommonJS 模块算法
+    "jsx": "react-jsx", // 设置如何处理.tsx文件。它一般以下三个值
+    "module": "commonjs", // 指定编译产物的模块格式。它的默认值与target属性有关，如果target是ES3或ES5，它的默认值是commonjs，否则就是ES6/ES2015
+    "target": "es5", // 指定编译出来的 JavaScript 代码的 ECMAScript 版本，比如es2021，默认是es3
+    "allowJs": false, // 指定源目录的 JavaScript 文件是否原样拷贝到编译后的目录
+    "noUnusedLocals": false, // 设置是否允许未使用的局部变量
+    "preserveConstEnums": true, // 将const enum结构保留下来，不替换成常量值
+    "skipLibCheck": true, // 跳过所有的声明文件（.d.ts）的类型检查
+    "sourceMap": true, // 设置编译时是否生成 SourceMap 文件
+    "inlineSources": true, // 设置将原始的.ts代码嵌入编译后的 JS 中
+    "declaration": true, // 设置编译时是否为每个脚本生成类型声明文件.d.ts
+    "experimentalDecorators": true, // 启用实验性的ES装饰器
+    "downlevelIteration": true, // 编译器将迭代器转换为ECMAScript 3兼容代码
+    "baseUrl": "./", // 指定 TypeScript 项目的基准目录
+    "lib": ["ESNext"], // 描述项目需要加载的 TypeScript 内置类型描述文件，跟三斜线指令/// <reference lib="" />作用相同
   }
 }

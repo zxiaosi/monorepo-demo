@@ -1,26 +1,52 @@
 {
-  "name": "sdk",
+  "name": "@zxiaosi/sdk",
   "version": "0.0.1",
   "description": "",
-  "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "keywords": [],
+  "authors": [],
+  "main": "lib",
+  "module": "esm",
+  "types": "esm/index.d.ts",
+  "files": [
+    "lib",
+    "esm",
+    "cjs"
+  ],
+  "exports": {
+    ".": {
+      "import": "./esm/index.js",
+      "types": "./esm/index.d.ts"
+    },
+    "./components": {
+      "import": "./esm/components/index.js",
+      "types": "./esm/components/index.d.ts"
+    },
+    "./icons": {
+      "import": "./esm/icons/index.js",
+      "types": "./esm/icons/index.d.ts"
+    },
+    "./pro-components": {
+      "import": "./esm/pro-components/index.js",
+      "types": "./esm/pro-components/index.d.ts"
+    }
+  },
   "scripts": {
     "dev": "father dev",
     "build": "father build",
     "build:deps": "father prebundle",
     "prepublishOnly": "father doctor && npm run build"
   },
-  "keywords": [],
-  "authors": [],
   "license": "MIT",
-  "files": [
-    "dist",
-    "compiled"
-  ],
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
+    "babel-plugin-import": "^1.13.8",
     "father": "^4.5.1"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.5.2",
+    "@ant-design/pro-components": "^2.8.3",
+    "antd": "^5.23.0"
   }
 }

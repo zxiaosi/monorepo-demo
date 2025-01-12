@@ -5,16 +5,17 @@
     "packages/*"
   ],
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "all": "pnpm -r dev",
     "app": "pnpm -F app dev",
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean && rimraf ./node_modules",
     "demo1": "pnpm -F demo1 dev",
-    "demo2": "pnpm -F demo2 dev"
+    "preinstall": "npx only-allow pnpm",
+    "sdk": "pnpm -F sdk dev"
   },
-  "dependencies": {},
   "devDependencies": {
-    "lerna": "^8.1.9"
+    "lerna": "^8.1.9",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-packagejson": "^2.5.6"
   }
 }
